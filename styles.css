@@ -15,6 +15,7 @@
     border-radius: 10px;
     text-align: center;
     width: 100%;
+    padding: 1%;
 }
 
 .search-bar h1 {
@@ -26,15 +27,6 @@
     gap: 20px;
 }
 
-.search-input {
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 .filters {
     justify-content: space-between;
@@ -78,4 +70,9 @@
 
 .reset-btn:hover {
     background-color: #c82333;
+}
+
+.second-section{
+    width: 1400px;
+    height: 500px;
 }
