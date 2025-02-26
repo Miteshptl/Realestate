@@ -42,16 +42,14 @@
       <!-- SECTION-1 STARTS HERE -->
           <div class="search-bar">
               <h1>Find Your Dream Property</h1>
-              <div class="search-form">
-                  <input type="text" id="location" placeholder="Enter location, property type, or keyword" class="search-input">
-                  <div class="filters">
+              <div class="filters">
+                  <input type="text" id="location" placeholder="Enter location" class="filter">
                       <select id="property-type" class="filter">
                           <option value="">Property Type</option>
                           <option value="house">House</option>
                           <option value="apartment">Apartment</option>
                           <option value="condo">Condo</option>
                           <option value="commercial">Commercial</option>
-                          <option value="land">Land</option>
                       </select>
                       <input type="number" id="min-price" placeholder="Min Price" class="filter" min="0">
                       <input type="number" id="max-price" placeholder="Max Price" class="filter" min="0">
@@ -75,7 +73,6 @@
                   </div>
               </div>
           </div>
-      </div>
   
       <script>
           function resetForm() {
@@ -90,20 +87,29 @@
       </div>
     <!-- SECTION-1 ENDS HERE -->
     <!-- SECTION-2 STARTS HERE -->
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+     <div class="second-section">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-item active" data-bs-interval="1000">
+            <img src="/images/building2.png" class="d-block w-100" alt="Building Image">
           </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-item" data-bs-interval="1000">
+            <img src="/images/building.png" class="d-block w-100" alt="Building Image1">
           </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-item" data-bs-interval="1000">
+            <img src="/images/building3.png" class="d-block w-100" alt="Building Image2">
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </div>
+     </div>
     <!-- SECTION-2 ENDS HERE -->
     <!-- SECTION-3 STARTS HERE -->
     <div class="third-section">
