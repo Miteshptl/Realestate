@@ -23,12 +23,12 @@
    color: white;
    font-weight: bold;
    border: 3px solid #f1f1f1;
-   position: absolute;
-   top: 100%;
+   position: relative;
+   /* top: 100%;
    left: 50%;
-   transform: translate(-50%, -75%);
+   transform: translate(-50%, -75%); */
    z-index: 2;
-   width: 95%;
+   width: 100%;
    padding: 0.5%;
    text-align: center;
 }
@@ -96,7 +96,6 @@
 
 /* Header */
 header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     background: #111;
@@ -138,6 +137,9 @@ nav ul li a:hover {
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
+}
+.button:hover {
+    color: white;
 }
 
 .btn:hover {
