@@ -1,0 +1,5 @@
+login with nonegothi gmail account for collect chatbot
+
+need to change the email address for the email to get the email from the user or website vistor
+
+later on going to add avatar for the chatbot
