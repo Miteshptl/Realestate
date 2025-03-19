@@ -7,6 +7,185 @@
     <link rel="stylesheet" href="styles.css ">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script>(function(w, d) { w.CollectId = "67cf0e593b5fcbcbdb785afa"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        .about-header {
+            background-image: url('https://via.placeholder.com/1500x900'); /* Replace with a luxurious real estate image */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .about-header h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: gold; /* Gold */
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .about-header p {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            color: GOLD; /* Gold */
+            margin-top: 60px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-section {
+            padding: 60px 0;
+            background-color: #000000; /* Dark background */
+        }
+
+        .about-section p {
+            font-size: 18px;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .mission-section {
+            background-color: #000000; /* Slightly lighter black background */
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: gold; /* Gold */
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: block;
+            margin: 20px auto;
+        }
+
+
+        .team-member {
+            margin-bottom: 30px;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .team-member h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: gold; /* Gold */
+        }
+
+        .team-member p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        .team-section {
+            padding: 60px 0;
+            background-color: #000000;
+        }
+
+        .team-section .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .team-section .col-md-3 {
+            max-width: 280px;
+            text-align: center;
+            margin: 0 15px;
+        }
+
+        /* Founder & CEO Section */
+        .founder-ceo-section {
+            background-color: #000000; /* Dark background */
+            padding: 60px 0;
+        }
+
+        .founder-ceo-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .founder-ceo-info {
+            text-align: center;
+        }
+
+        .founder-ceo-info h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: gold; /* Gold */
+            margin-bottom: 20px;
+        }
+
+        .founder-ceo-info p {
+            font-size: 18px;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .about-header {
+                padding: 80px 0;
+            }
+
+            .about-header h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .about-section p,
+            .mission-section p {
+                font-size: 16px;
+            }
+
+            .team-member img {
+                height: 200px;
+            }
+        }
+    </style>
   </head>
   <body>
 
@@ -28,137 +207,78 @@
     </header>
   
       <!-- Navbar Ends Here -->
+<div class="about-header">
+    <h1>Welcome to Our Real Estate Agency</h1>
+    <p>We are committed to providing exceptional properties and personalized service, helping you find the perfect place to call home.</p>
+</div>
 
-    <!-- SECTION-1 STARTS HERE -->
-    <div class="css-1">
-        <section>
-            <img src="..." alt="...">
-            <h1>Your trusted partner in finding the perfect home.</h1>
-        </section>
+<!-- About Us Section -->
+<div class="about-section">
+    <h2 class="section-title">About Us</h2>
+    <div class="container">
+        <p>Our real estate agency has been in the business for over a decade, providing high-quality, luxurious properties to individuals and families alike. We take pride in delivering personalized service and making the buying process seamless and transparent. Our team of experts is dedicated to helping you find a home that aligns with your needs, desires, and aspirations.</p>
     </div>
-    <!-- SECTION-1 ENDS HERE -->
-     <!-- SECTION-2 STARTS HERE -->
-    <div class="css-2">
-        <section>
-            <hr>
-            <div class="container text-center">
-                <div class="row">
-                  <div class="col">
-                    <h1>Mission</h1>
-                    <p>Our mission is to provide exceptional real estate services by putting our clients' needs first, offering expert guidance, and ensuring a smooth, stress-free experience in every transaction.</p>
-                  </div>
-                  <div class="col">
-                    <h1>Vision</h1>
-                    <p>Our vision is to be the leading real estate agency, recognized for innovation, integrity, and a commitment to helping clients achieve their dreams of homeownership.</p>
-                  </div>
-                </div>
-              </div>
-            <hr>
-        </section>
-    </div>
-    <!-- SECTION-2 ENDS HERE -->
-     <!-- SECTION-3 STARTS HERE -->
-    <div class="css-3">
-        <section>
-            <h1>Founders</h1>
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg" alt="..." style="width: 350px; height: 375px;">
-                  </div>
-                  <div class="col">
-                    <h1>Bhavesh Patel</h1>
-                    <h5>Founder</h5>
-                    
-                    <p>As the <strong>Founder</strong> of <strong>LUXEHOMES</strong>, Bhavesh brings over <strong>6 years</strong> of dynamic experience in the real estate industry, specializing in <strong>residential properties</strong> in Mumbai. He has successfully led <strong>project marketing initiatives</strong>, contributing to the development and sale of significant real estate projects across the city.</p>
+</div>
 
-                    <p>With a strong commitment to <strong>transparency</strong>, Bhavesh focuses on building lasting <strong>relationships</strong> with clients, putting their needs and <strong>trust</strong> above all else. His approachable, friendly demeanor paired with a <strong>professional</strong> work ethic has earned him the confidence and loyalty of numerous satisfied customers.</p>
-
-                    <p>Under his leadership, <strong>LUXEHOMES</strong> continues to grow as a trusted platform for those navigating the real estate market. Bhavesh’s vision is to make the real estate process <strong>simple</strong>, <strong>clear</strong>, and <strong>enjoyable</strong> for everyone, ensuring a seamless experience from start to finish.</p>
-
-                    <p>In addition to his real estate ventures, Bhavesh is expanding his entrepreneurial journey with the <strong>FMCG business</strong>, manufacturing and distributing <strong>Jeera Soda</strong> under the brand name <strong>Bubalus Beverages</strong>.</p>
-
-                  </div>
-                </div>
-              </div>
-              <br>
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg" alt="..." style="width: 350px; height: 375px;">
-                  </div>
-                  <div class="col">
-                    <h1>Rajesh Patel</h1>
-                    <h5>Founder & CEO</h5>
-                      
-                    <p>With over <strong>5+ years</strong> of experience in the real estate industry, Rajesh has built a solid reputation as a specialist in <strong>commercial and retail spaces</strong> across Mumbai and Gujarat. Having led numerous <strong>project marketing initiatives</strong>, furthering his mission to bring <strong>professionalism</strong> and structure to the traditionally <strong>unorganized real estate sector</strong>.</p>
-
-                    <p>As the <strong>Founder and CEO</strong> of <strong>LUXEHOMES</strong>, Rajesh has been a strong advocate for leveraging <strong>technology</strong> to improve <strong>business management</strong>, <strong>expansion</strong>, and <strong>social outreach</strong>. His innovative approach has inspired confidence in over <strong>700 satisfied customers</strong>, ensuring that every transaction is <strong>seamless</strong>, <strong>transparent</strong>, and <strong>efficient</strong>.</p>
-
-                    <p>Rajesh is also venturing into the <strong>FMCG business</strong>, focusing on the manufacturing and distribution of <strong>Jeera Soda</strong> under the brand name <strong>Bubalus Beverages</strong>, further expanding his business portfolio.</p>
-
-                    <p>With his passion for growth and innovation, Rajesh is committed to offering consumers refreshing, high-quality products that are both health-conscious and enjoyable, positioning <strong>Bubalus Beverages</strong> as a standout brand in the FMCG market.</p>
-                  </div>
-                </div>
-              </div>
-        </section>
-    </div>
-    <!-- SECTION-3 ENDS HERE -->
-     <!-- SECTION-4 STARTS HERE -->
-    <div class="css-4">
-        <section>
-        <div class="container">
-            <div class="row">
-              <div class="col">
-                <img src="..." alt="...">
-                <h3>Trust</h3>
-                <p>Building lasting relationships through integrity and transparency, we earn your trust every step of the way in your real estate journey.</p>
-              </div>
-              <div class="col">
-                <img src="..." alt="...">
-                <h3>Professionalism</h3>
-                <p>Committed to excellence, we uphold the highest standards of professionalism to ensure seamless, trustworthy real estate experiences for every client.</p>
-              </div>
-              <div class="col">
-                <img src="..." alt="...">
-                <h3>Expertise</h3>
-                <p>With deep industry knowledge and experience, we provide expert guidance to help you make informed, confident real estate decisions.</p>
-              </div>
+<!-- Misiion and Vision section -->
+<div class="mission-vision-section">
+    <h2 class="section-title text-center">Our Mission & Vision</h2>
+    <div class="container">
+        <div class="row">
+            <!-- Mission Section -->
+            <div class="col-md-6">
+                <h3>Our Mission</h3>
+                <p>Our mission is to deliver a world-class real estate experience, empowering our clients with the knowledge and resources needed to make informed decisions. We are committed to creating lasting relationships with our clients, helping them not just find properties, but to invest in a lifestyle.</p>
             </div>
-          </div>
-        </section>
+            <!-- Vision Section -->
+            <div class="col-md-6">
+                <h3>Our Vision</h3>
+                <p>Our vision is to be the most trusted and respected real estate agency, renowned for our unmatched service, integrity, and commitment to excellence. We aim to create a lasting legacy through luxurious properties and unparalleled customer experiences.</p>
+            </div>
+        </div>
     </div>
-    <!-- SECTION-4 ENDS HERE -->
-     <!-- SECTION-5 STARTS HERE -->
-    <div class="css-5">
-        
+</div>
+
+<!-- Founder & CEO Section -->
+<div class="founder-ceo-section">
+    <div class="container">
+        <div class="founder-ceo-info">
+            <h3>Our Founder & CEO</h3>
+            <img src="https://via.placeholder.com/500x300" alt="Founder & CEO" class="founder-ceo-image">
+            <p>Our founder and CEO, <strong>Johnathan Doe</strong>, has over 20 years of experience in the real estate industry. With a passion for excellence, he built this company with a vision to deliver exceptional, luxury properties to the discerning buyer. His commitment to innovation and client satisfaction continues to drive the success of the company.</p>
+        </div>
     </div>
-    <!-- SECTION-5 ENDS HERE -->
-     <!-- SECTION-6 STARTS HERE -->
-    <div class="css-6">
-        
+</div>
+
+<!-- Team Section -->
+<div class="team-section">
+    <h2 class="section-title">Meet Our Team</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 team-member">
+                <img src="https://via.placeholder.com/300x200" alt="Team Member 1">
+                <h4>John Doe</h4>
+                <p>Real Estate Expert</p>
+            </div>
+            <div class="col-md-3 team-member">
+                <img src="https://via.placeholder.com/300x200" alt="Team Member 2">
+                <h4>Jane Smith</h4>
+                <p>Client Relations</p>
+            </div>
+            <div class="col-md-3 team-member">
+                <img src="https://via.placeholder.com/300x200" alt="Team Member 3">
+                <h4>Michael Johnson</h4>
+                <p>Property Manager</p>
+            </div>
+            <div class="col-md-3 team-member">
+                <img src="https://via.placeholder.com/300x200" alt="Team Member 4">
+                <h4>Alice Williams</h4>
+                <p>Luxury Sales Specialist</p>
+            </div>
+        </div>
     </div>
-    <!-- SECTION-6 ENDS HERE -->
-     <!-- SECTION-7 STARTS HERE -->
-    <div class="css-7">
-        
-    </div>
-    <!-- SECTION-7 ENDS HERE -->
-     <!-- SECTION-8 STARTS HERE -->
-    <div class="css-8">
-        
-    </div>
-    <!-- SECTION-8 ENDS HERE -->
-     <!-- SECTION-9 STARTS HERE -->
-    <div class="css-9">
-        
-    </div>
-    <!-- SECTION-9 ENDS HERE -->
-     <!-- SECTION-10 STARTS HERE -->
-    <div class="css-10">
-        
-    </div>
-    <!-- SECTION-10 ENDS HERE -->
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
