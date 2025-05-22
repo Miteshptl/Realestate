@@ -1,0 +1,257 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | About{% endblock %}
+
+<body>
+    {% block body %} 
+<style>
+body{
+    background-color: #000000;
+}
+.about-header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+}
+
+.about-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: gold;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.about-header p {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    color: GOLD;
+    margin-top: 60px;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-section {
+    padding: 60px 0;
+    background-color: #000000;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #bbb;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.mission-section {
+    background-color: #000000;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: gold;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin: 20px auto;
+}
+
+
+.team-member {
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.team-member h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: gold;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+.team-section {
+    padding: 60px 0;
+    background-color: #000000;
+}
+
+.team-section .row {
+    display: flex;
+    justify-content: center;
+}
+
+.team-section .col-md-3 {
+    max-width: 280px;
+    text-align: center;
+    margin: 0 15px;
+}
+
+/* Founder & CEO Section */
+.founder-ceo-section {
+    background-color: #000000;
+    padding: 60px 0;
+}
+
+.founder-ceo-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.founder-ceo-info {
+    text-align: center;
+}
+
+.founder-ceo-info h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.founder-ceo-info p {
+    font-size: 18px;
+    color: #bbb;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .about-header {
+        padding: 80px 0;
+    }
+
+    .about-header h1 {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .about-section p,
+    .mission-section p {
+        font-size: 16px;
+    }
+
+    .team-member img {
+        height: 200px;
+    }
+}
+</style>
+    
+
+<!-- About Header Section -->
+<div class="about-header">
+    <h1>Welcome to Our Real Estate Agency</h1>
+    <p>We are committed to providing exceptional properties and personalized service, helping you find the perfect place to call home.</p>
+</div>
+
+<!-- About Us Section -->
+<div class="about-section">
+    <h2 class="section-title">About Us</h2>
+    <div class="container">
+        <p>Our real estate agency has been in the business for over a decade, providing high-quality, luxurious properties to individuals and families alike. We take pride in delivering personalized service and making the buying process seamless and transparent. Our team of experts is dedicated to helping you find a home that aligns with your needs, desires, and aspirations.</p>
+    </div>
+</div>
+
+<!-- Misiion and Vision section -->
+<div class="mission-vision-section">
+    <h2 class="section-title text-center">Our Mission & Vision</h2>
+    <div class="container">
+        <div class="row">
+            <!-- Mission Section -->
+            <div class="col-md-6">
+                <h3>Our Mission</h3>
+                <p>Our mission is to deliver a world-class real estate experience, empowering our clients with the knowledge and resources needed to make informed decisions. We are committed to creating lasting relationships with our clients, helping them not just find properties, but to invest in a lifestyle.</p>
+            </div>
+            <!-- Vision Section -->
+            <div class="col-md-6">
+                <h3>Our Vision</h3>
+                <p>Our vision is to be the most trusted and respected real estate agency, renowned for our unmatched service, integrity, and commitment to excellence. We aim to create a lasting legacy through luxurious properties and unparalleled customer experiences.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Founder & CEO Section -->
+<div class="founder-ceo-section">
+<div class="container">
+    <div class="founder-ceo-info">
+        <h3>Our Founder & CEO</h3>
+        <!-- <img src="../static/SVG/" alt="Founder & CEO" class="founder-ceo-image"> -->
+        <p>Our founder and CEO, <strong>Johnathan Doe</strong>, has over 20 years of experience in the real estate industry. With a passion for excellence, he built this company with a vision to deliver exceptional, luxury properties to the discerning buyer. His commitment to innovation and client satisfaction continues to drive the success of the company.</p>
+    </div>
+</div>
+</div>
+
+<!-- Team Section -->
+<div class="team-section">
+<h2 class="section-title">Meet Our Team</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 team-member">
+            <img src="../static/SVG/700674.png" alt="Team Member 1">
+            <h4>John Doe</h4>
+            <p>Real Estate Expert</p>
+        </div>
+        <div class="col-md-3 team-member">
+            <img src="../static/SVG/6997481.png" alt="Team Member 2">
+            <h4>Jane Smith</h4>
+            <p>Client Relations</p>
+        </div>
+        <div class="col-md-3 team-member">
+            <img src="../static/SVG/6998021.png" alt="Team Member 3">
+            <h4>Michael Johnson</h4>
+            <p>Property Manager</p>
+        </div>
+        <div class="col-md-3 team-member">
+            <img src="../static/SVG/women.png" alt="Team Member 4">
+            <h4>Alice Williams</h4>
+            <p>Luxury Sales Specialist</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+    {% endblock %}
+</body>

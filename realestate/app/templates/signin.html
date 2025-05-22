@@ -1,0 +1,151 @@
+{% extends 'base.html' %} 
+{% block title %} LUXEHOMES | SignIn{% endblock %} 
+{% block body %}
+<body>
+<style>
+    body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+}
+
+.signin-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+}
+
+.signin-form {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    margin: 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.signin-form h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: gold; 
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif; 
+    text-align: center;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid gold; 
+    background-color: transparent;
+    color: #fff;
+    padding: 12px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #bbb; 
+}
+
+.form-control:focus {
+    border-color: #e67e22; 
+    box-shadow: 0 0 6px rgba(231, 126, 34, 0.6); 
+    outline: none;
+}
+
+.btn-primary {
+    background-color: gold;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22; 
+    box-shadow: 0 0 12px rgba(231, 126, 34, 0.5);
+}
+
+.signin-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+.signin-footer a {
+    color: gold;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+    .signin-form {
+        padding: 25px;
+    }
+
+    .signin-form h2 {
+        font-size: 30px;
+    }
+}
+</style>
+<div class="signin-page">
+    <div class="signin-form">
+        <h2>Sign In</h2>
+        {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> {{error}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            <form method="POST">
+            {% csrf_token %}
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="text">Username</label>
+                <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter Username" required>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="upass" name="upass" placeholder="Enter your password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+
+        <div class="signin-footer">
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+            <p>Forgot Password? <a href="{% url 'request_password_reset' %}">CLICK HERE</a></p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+</body>

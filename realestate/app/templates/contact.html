@@ -1,0 +1,119 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | Contact{% endblock %}
+<body>
+  {% block body %} 
+  <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            color: gold;
+            text-align: center;
+            padding: 20px;
+        }
+        .form-container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .form-container h2 {
+            text-align: center;
+            color: gold;
+        }
+        label {
+            font-weight: bold;
+            color: white;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gold;
+            border-radius: 4px;
+            color: white;
+        }
+        input[type="submit"] {
+            background-color: gold;
+            border: none;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #FFD700;
+        }
+        </style>
+    <!-- SECTION-2 STARTS HERE -->
+    <div class="cu-2">
+        <section>
+            <div class="container">
+            <h1 style="text-align: center; color: #FFD700;">Contact Us</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p><label>Name:</label><br><input type="text" name="name" required></p>
+        <p><label>Phone:</label><br><input type="number" maxlength="10" minlength="10" max="9999999999" min="1000000000" name="phone" required></p>
+        <p><label>Email:</label><br><input type="email" name="email" required></p>
+        <p><label>Subject:</label><br><input type="text" name="subject" required></p>
+        <p><label>Message:</label><br><textarea name="message" required></textarea></p>
+        <input type="submit" value="Send">
+    </form> 
+</div>
+        </section>
+    
+    </div>
+    <!-- SECTION-2 ENDS HERE -->
+     <!-- SECTION-3 STARTS HERE -->
+    <div class="cu-3">
+        <section>
+            
+        </section>
+    </div>
+    <!-- SECTION-3 ENDS HERE -->
+     <!-- SECTION-4 STARTS HERE -->
+    <div class="cu-4">
+        <section>
+        
+        </section>
+    </div>
+    <!-- SECTION-4 ENDS HERE -->
+     <!-- SECTION-5 STARTS HERE -->
+    <div class="cu-5">
+        <section>
+            
+        </section>
+    </div>
+    <!-- SECTION-5 ENDS HERE -->
+     <!-- SECTION-6 STARTS HERE -->
+    <div class="cu-6">
+        
+    </div>
+    <!-- SECTION-6 ENDS HERE -->
+     <!-- SECTION-7 STARTS HERE -->
+    <div class="cu-7">
+        
+    </div>
+    <!-- SECTION-7 ENDS HERE -->
+     <!-- SECTION-8 STARTS HERE -->
+    <div class="cu-8">
+        
+    </div>
+    <!-- SECTION-8 ENDS HERE -->
+     <!-- SECTION-9 STARTS HERE -->
+    <div class="cu-9">
+        
+    </div>
+    <!-- SECTION-9 ENDS HERE -->
+     <!-- SECTION-10 STARTS HERE -->
+    <div class="cu-10">
+        
+    </div>
+    <!-- SECTION-10 ENDS HERE -->
+    {% endblock %}
+  </body>
+  

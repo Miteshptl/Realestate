@@ -1,0 +1,9 @@
+Django
+setuptools
+pillow
+razorpay
+django-crispy-forms
+python-decouple
+django-environ
+gunicorn
+whitenoise

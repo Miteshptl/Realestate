@@ -1,9 +1,0 @@
-login with nonegothi gmail account for collect chatbot
-
-name of the bot is " LUXEbot"
-
-need to change the email address for the email to get the email from the user or website vistor
-
-need to add questions to the chatbot right now there is only one question related to the website without collecting or asking the email id and phone number frtom the visitor
-
-later on going to add avatar for the chatbot

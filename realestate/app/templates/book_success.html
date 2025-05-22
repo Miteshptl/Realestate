@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | Success{% endblock %}
+
+<body>
+    {% block body %} 
+<section>
+    <div class="container">
+    <h1 style="text-align: center; color: gold;">Thank You for Booking</h1>
+
+
+<div class="success-container">
+    <h2>Your appointment has been successfully booked!</h2>
+    <p>We have received your booking for the consultation service. You will receive a confirmation email shortly.</p>
+    
+
+    <h3>If you need to reschedule or have any questions, feel free to <a href="tel:+1234567890">contact us</a>.</h3>
+
+    
+    <a href="{% url 'appointments' %}" class="btn btn-outline-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.05 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+          </svg>  View Your Appointments</a>
+    
+</div>
+</div>
+</section>
+{% endblock %}
+</body>

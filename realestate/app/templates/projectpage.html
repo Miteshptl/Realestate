@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | Properties Deatils{% endblock %}
+
+<body>
+{% block body %} 
+
+<!-- <div class="container my-5"> -->
+    <div class="qwert">
+        <div class="container">
+    <h1 class="display-4">{{ project.name_of_property }}</h1>
+    <p class="lead">Type: {{ project.type_of_project }}</p>
+    
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            {% for image in project.images.all %}
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="{{ forloop.counter0 }}" class=" {% if forloop.first %} active {% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+            {% endfor %}
+        </div>
+        <div class="carousel-inner">
+            {% for image in project.images.all %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    <img src="{{ image.image.url }}" class="d-block w-100" alt="Image of {{ project.name_of_property }}">
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="mt-4">
+        <h3>Description:</h3>
+        <p>{{ project.description }}</p>
+
+        <h3>Amenities:</h3>
+        <p>{{ project.amenities }}</p>
+
+        <h3>Price:</h3>
+        <p>₹{{ project.price }}</p>
+
+        <h3>Negotiable:</h3>
+        <p>{{ project.negotiable }}</p>
+    </div>
+
+    <br>
+    <br>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <a href="{% url 'registered' %}" class="btn btn-outline-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.05 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+    </svg>Back to Project List</a>
+    </div>
+</div>
+{% endblock %}
+</body>

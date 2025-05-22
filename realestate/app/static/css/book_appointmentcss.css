@@ -1,0 +1,38 @@
+header {
+    background-color: #000;
+    color: gold;
+    text-align: center;
+    padding: 20px;
+}
+.form-container {
+    width: 60%;
+    margin: 50px ;
+    padding: 30px;
+    border-radius: 8px;
+}
+.form-container h2 {
+    text-align: center;
+    color: gold;
+}
+label {
+    font-weight: bold;
+    color: white;
+}
+select, input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gold;
+    border-radius: 4px;
+    color: white;
+}
+input[type="submit"] {
+    background-color: gold;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+input[type="submit"]:hover {
+    background-color: #FFD700;
+}

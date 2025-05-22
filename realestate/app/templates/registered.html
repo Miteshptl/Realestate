@@ -1,0 +1,264 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | Properties{% endblock %}
+<body>
+  {% block body %} 
+
+  <style>
+    .r-1 {
+        padding: 10px;
+        text-align: center;
+    }
+    .r-1 img {
+        width: 100%;
+        height: auto;
+    }
+    .r-1 h1 {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+    .third-section {
+        padding: 10px;
+    }
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .filter {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+    }
+    .search-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-md-2 {
+        flex: 1 1 20%;
+        margin: 10px;
+    }
+    .card {
+        border: 1px solid ;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        background-color: #000000;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+    .card-body {
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .r-3 {
+        padding: 10px;
+    }
+    .r-3 section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .r-3 .col-md-2 {
+        flex: 1 1 20%;
+        margin: 10px;
+    }
+    .r-3 .card {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+    }
+    .r-3 .card img {
+        width: 100%;
+        height: auto;
+    }
+    .r-3 .card-body {
+        padding: 10px;
+    }
+    .r-3 .card-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+  </style>
+
+     <!-- SECTION-2 STARTS HERE -->
+     <div class="third-section">
+        <section>
+            <div class="search-bar">
+                <h1>Find Your Dream Property</h1>
+            <form method="get" action="" class="search-form">
+                <div class="filters">
+                <input type="text" name="location" placeholder="Location" value="{{ request.GET.location }}">
+                
+                <select name="type">
+                    <option value="">All Types</option>
+                    <option value="Residential" {% if request.GET.type == 'Residential' %}selected{% endif %}>Residential</option>
+                    <option value="Commercial" {% if request.GET.type == 'Commercial' %}selected{% endif %}>Commercial</option>
+                </select>
+            
+                <input type="number" name="min_price" placeholder="Min Price" value="{{ request.GET.min_price }}">
+                <input type="number" name="max_price" placeholder="Max Price" value="{{ request.GET.max_price }}">
+            
+                <select name="bhk">
+                    <option value="">BHK</option>
+                    <option value="1BHK" {% if request.GET.bhk == '1BHK' %}selected{% endif %}>1 BHK</option>
+                    <option value="2BHK" {% if request.GET.bhk == '2BHK' %}selected{% endif %}>2 BHK</option>
+                    <option value="3BHK" {% if request.GET.bhk == '3BHK' %}selected{% endif %}>3 BHK</option>
+                    <option value="3BHK" {% if request.GET.bhk == '3BHK' %}selected{% endif %}>3 BHK</option>
+                </select>
+            
+    
+                <button type="submit" class="btn btn-success">Search</button>
+                <a href="{% url 'registered' %}" class="btn btn-danger">Reset</a>
+        </div>
+            </form>
+        </div>
+    </section>
+    
+        </div>
+    <!-- SECTION-2 ENDS HERE -->
+     <!-- SECTION-3 STARTS HERE -->
+    
+    <div class="r-3">
+        <section>
+            <div class="row">
+                {% for project in projects %}
+                <div class="card" style="width: 18rem;">
+                    {% if project.display_image %}
+                      <img src="{{ project.display_image.url }}" class="card-img-top" alt="{{ project.name_of_property }}">
+                    {% else %}
+                      <img src="{% static 'images/default_image.png' %}" class="card-img-top" alt="{{ project.name_of_property }}">
+                    {% endif %}
+                    <div class="card-body"
+                         data-location="{{ project.area_of_property_located|lower }}"
+                         data-type="{{ project.type_of_project|lower }}"
+                         data-price="{{ project.price }}"
+                         data-bhk="{{ project.no_of_BHK }}"
+                         data-negotiable="{{ project.negotiable|lower }}">
+                      <h5 class="card-title" style="color: gold;">{{ project.name_of_property }}</h5>
+                      <p class="card-text">Area: {{ project.area_of_property_located }}</p>
+                      <a href="/projectpage/{{ project.project_id }}" class="btn btn-primary">Know More</a>
+                    </div>
+                  </div>
+                  
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+    <!-- SECTION-3 ENDS HERE -->
+     <!-- SECTION-4 STARTS HERE -->
+    <div class="r-4">
+        <section>
+        
+        </section>
+    </div>
+    <!-- SECTION-4 ENDS HERE -->
+     <!-- SECTION-5 STARTS HERE -->
+    <div class="r-5">
+        <section>
+            
+        </section>
+    </div>
+    <!-- SECTION-5 ENDS HERE -->
+     <!-- SECTION-6 STARTS HERE -->
+    <div class="r-6">
+        
+    </div>
+    <!-- SECTION-6 ENDS HERE -->
+     <!-- SECTION-7 STARTS HERE -->
+    <div class="r-7">
+        
+    </div>
+    <!-- SECTION-7 ENDS HERE -->
+     <!-- SECTION-8 STARTS HERE -->
+    <div class="r-8">
+        
+    </div>
+    <!-- SECTION-8 ENDS HERE -->
+     <!-- SECTION-9 STARTS HERE -->
+    <div class="r-9">
+        
+    </div>
+    <!-- SECTION-9 ENDS HERE -->
+     <!-- SECTION-10 STARTS HERE -->
+    <div class="r-10">
+        
+    </div>
+    <!-- SECTION-10 ENDS HERE -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          document.querySelector(".btn-success").addEventListener("click", function () {
+            const location = document.getElementById("location").value.toLowerCase();
+            const propertyType = document.getElementById("property-type").value.toLowerCase();
+            const minPrice = parseFloat(document.getElementById("min-price").value);
+            const maxPrice = parseFloat(document.getElementById("max-price").value);
+            const bedrooms = parseInt(document.getElementById("bedrooms").value);
+            
+
+      
+            const cards = document.querySelectorAll(".card");
+      
+            cards.forEach((card) => {
+              const body = card.querySelector(".card-body");
+              const cardData = body.dataset;
+      
+              const area = cardData.location;
+              const type = cardData.type;
+              const price = parseFloat(cardData.price || 0);
+              const bhkConfig = cardData.bhk;
+              const negotiableVal = cardData.negotiable;
+      
+              let matches = true;
+      
+              if (location && !area.includes(location)) matches = false;
+              if (propertyType && !type.includes(propertyType)) matches = false;
+              if (!isNaN(minPrice) && price < minPrice) matches = false;
+              if (!isNaN(maxPrice) && price > maxPrice) matches = false;
+              if (!isNaN(bedrooms)) {
+                const bhkMatch = bhkConfig.match(/(\d+)/);
+                const bhk = bhkMatch ? parseInt(bhkMatch[1]) : 0;
+                if (bhk < bedrooms) matches = false;
+              }
+              if (negotiable && negotiable !== negotiableVal.toLowerCase()) matches = false;
+      
+              card.style.display = matches ? "block" : "none";
+            });
+          });
+        });
+        function resetForm() {
+              document.getElementById("location").value = '';
+              document.getElementById("property-type").value = '';
+              document.getElementById("min-price").value = '';
+              document.getElementById("max-price").value = '';
+              document.getElementById("bedrooms").value = '';
+        }
+      </script>
+
+    {% endblock %}
+  </body>

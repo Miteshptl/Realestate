@@ -1,0 +1,181 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | Book Appointment{% endblock %}
+
+<body>
+  {% block body %} 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            color: gold;
+            text-align: center;
+            padding: 20px;
+        }
+        .form-container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .form-container h2 {
+            text-align: center;
+            color: gold;
+        }
+        label {
+            font-weight: bold;
+            color: white;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gold;
+            border-radius: 4px;
+            color: white;
+        }
+        input[type="submit"] {
+            background-color: gold;
+            border: none;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #FFD700;
+        }
+    </style>
+    <header>
+        <h1>Book a Consultation</h1>
+    </header>
+
+    <div class="form-container">
+        <h2>Choose Your Service and Time Slot</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Service Details -->
+            <label for="service_name">Consultation Service</label>
+            <input type="text" name="service_name" value="Consultation Service" required readonly>
+            
+            <label for="service_description">Description</label>
+            <textarea name="service_description" rows="3" readonly>This is a detailed description of the consultation service.</textarea>
+            
+            <label for="service_fee">Fee</label>
+            <input type="text" name="service_fee" value="500.00" required readonly>
+            
+            <!-- User Information -->
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" required maxlength="10" minlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)">
+
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+            
+            <label for="message">Message </label>
+            <textarea name="message" rows="3"></textarea>
+
+            <label for="appointment_date">Choose Appointment Date:</label>
+            <input type="date" name="appointment_date" required min="{{ today|date:"Y-m-d" }}">
+
+            <!-- Time Slot Selection -->
+            <label for="time_slot">Choose Your Time Slot:</label>
+            <select name="time_slot" required>
+                {% for slot in time_slots %}
+                    <option value="{{ slot }}">{{ slot }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit" class="btn btn-warning" id="rzp-button1">Book Appointment</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+    var options = {
+        "key": "rzp_test_wH0ggQnd7iT3nB", // Enter the Key ID generated from the Dashboard
+        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "LUXEHOMES",
+        "description": "Consultaion Service",
+        "image": "https://example.com/your_logo",
+        "order_id": "{{data.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response){
+    var form = $('form').serialize(); // Serialize all form data
+
+    $.ajax({
+        type: 'POST',
+        url: '/confirm_appointment/',  // This should match your Django URL
+        data: form,
+        success: function (data) {
+            if(data.status === 'success'){
+                window.location.href = window.location.origin + '/success';
+            } else {
+                alert("Something went wrong while booking appointment.");
+            }
+        },
+        error: function(){
+            alert("Failed to communicate with server.");
+        }
+    });
+},
+
+        "prefill": {
+            "name": "LUXEHOMES",
+            "email": "mrp93911@gmail.com",
+            "contact": "9391194085"
+        },
+        "notes": {
+            "address": "Thakur Village,  Kandivali (East), Mumbai - 400101",
+        },
+        "theme": {
+            "color": "#000000"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    document.getElementById('rzp-button1').onclick = function(e){
+    e.preventDefault();
+
+    // Check if form fields are filled
+    let phone = $('input[name="phone"]').val();
+    let email = $('input[name="email"]').val();
+    let appointment_date = $('input[name="appointment_date"]').val();
+    let time_slot = $('select[name="time_slot"]').val();
+
+    if(phone === "" || email === "" || appointment_date === "" || time_slot === ""){
+        alert("Please fill all required fields before proceeding to payment.");
+        return false;
+    }
+
+    var phonePattern = /^[0-9]{10}$/;
+    if(!phonePattern.test(phone)){
+        alert("Phone number must be exactly 10 digits.");
+        return false;
+    }
+
+    // Check Email Validation
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailPattern.test(email)){
+        alert("Please enter a valid email address.");
+        return false;
+    }
+    
+    // If all good - open Razorpay popup
+    rzp1.open();
+}
+    rzp1.on('payment.failed', function (response){
+            alert("Transaction cancelled. Try Again");
+            window.location.href=window.location.origin+'/book_appointment'
+            
+    });
+
+    </script>
+
+    {% endblock %}
+</body>

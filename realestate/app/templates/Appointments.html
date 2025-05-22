@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}LUXEHOME | Appointments{% endblock %}
+<body>
+    {% block body %} 
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            color: gold;
+            text-align: center;
+            padding: 20px;
+        }
+        .appointments-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #000;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .appointments-container h2 {
+            text-align: center;
+            color: gold;
+        }
+        .appointment {
+            background-color: #000;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            color: gold;
+        }
+    </style>
+
+
+
+    <header>
+        <h1>Your Appointments</h1>
+    </header>
+<section>
+    <div class="container">
+    <div class="appointments-container">
+        <h2>Upcoming Appointments</h2>
+        {% if appointments %}
+            {% for appointment in appointments %}
+                <div class="appointment">
+                    <h3>{{ appointment.service_name }} - {{ appointment.date|date:"F j, Y, g:i a" }}</h3>
+                    <p><strong>Phone:</strong> {{ appointment.phone }}</p>
+                    <p><strong>Email:</strong> {{ appointment.email }}</p>
+                    <p><strong>Message:</strong> {{ appointment.message }}</p>
+                </div>
+            {% endfor %}
+            <p>If you wish to reschedule your appointment, please <a href="mailto:mrp93911@gmail.com">contact us </a></p>
+        {% else %}
+            
+            <p>You have no upcoming appointments.</p>
+
+        {% endif %}
+    </div>
+</div>
+</section>
+    
+    {% endblock %}
+</body>
+

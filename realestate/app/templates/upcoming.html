@@ -1,0 +1,178 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} LUXEHOME | Upcoming Properties {% endblock %}
+<body>  
+  {% block body %} 
+
+  <style>
+    .r-1 {
+        padding: 10px;
+        text-align: center;
+    }
+    .r-1 img {
+        width: 100%;
+        height: auto;
+    }
+    .r-1 h1 {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+    .third-section {
+        padding: 10px;
+    } 
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .filter {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+    }
+    .search-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-md-2 {
+        flex: 1 1 20%;
+        margin: 10px;
+    }
+    .card {
+        border: 1px solid;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        background-color: #000000;
+    }
+    .card img {
+        width: 100%;
+        height: 350px;
+    }
+    .card-body {
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .r-3 {
+        padding: 10px;
+    }
+    .r-3 section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .r-3 .col-md-2 {
+        flex: 1 1 20%;
+        margin: 10px;
+    }
+    .r-3 .card {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+    }
+    .r-3 .card img {
+        width: 100%;
+        height: auto;
+    }
+    .r-3 .card-body {
+        padding: 10px;
+    }
+    .r-3 .card-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+  </style>
+
+
+     <!-- SECTION-2 STARTS HERE -->
+    <div class="up-2">
+        <section>
+        <div class="search-bar">
+            <h1>Find Your Dream Property</h1>
+        <form method="get" action="" class="search-form">
+            <div class="filters">
+            <input type="text" name="location" placeholder="Location" value="{{ request.GET.location }}">
+            
+            <select name="type">
+                <option value="">All Types</option>
+                <option value="Residential" {% if request.GET.type == 'Residential' %}selected{% endif %}>Residential</option>
+                <option value="Commercial" {% if request.GET.type == 'Commercial' %}selected{% endif %}>Commercial</option>
+            </select>
+        
+            <input type="number" name="min_price" placeholder="Min Price" value="{{ request.GET.min_price }}">
+            <input type="number" name="max_price" placeholder="Max Price" value="{{ request.GET.max_price }}">
+        
+            <select name="bhk">
+                <option value="">BHK</option>
+                <option value="1BHK" {% if request.GET.bhk == '1BHK' %}selected{% endif %}>1 BHK</option>
+                <option value="2BHK" {% if request.GET.bhk == '2BHK' %}selected{% endif %}>2 BHK</option>
+                <option value="3BHK" {% if request.GET.bhk == '3BHK' %}selected{% endif %}>3 BHK</option>
+                <option value="3BHK" {% if request.GET.bhk == '3BHK' %}selected{% endif %}>3 BHK</option>
+            </select>
+        
+
+            <button type="submit" class="btn btn-success">Search</button>
+            <a href="{% url 'upcoming' %}" class="btn btn-danger">Reset</a>
+    </div>
+        </form>
+    </div>
+</section>
+
+    </div>
+    <!-- SECTION-2 ENDS HERE -->
+
+    
+    <section>
+        <div class="container">
+      <div class="row">
+              {% for x in upcoming_projects %}
+              <div class="card" style="width: 18rem;">
+                {% if x.display_image %}
+                    <img src="{{ x.display_image.url }}" class="card-img-top" alt="{{ x.name_of_project }}">
+                {% else %}
+                    <img src="{% static 'images/default_image.png' %}" class="card-img-top" alt="{{ x.name_of_project }}">
+                {% endif %}
+
+                <div class="card-body"
+                     data-location="{{ x.area_of_project_located|lower }}"
+                     data-type="{{ x.type_of_project|lower }}"
+                     data-price="{{ x.total_area_of_project|default:'0'|floatformat }}"
+                     data-config="{{ x.configuration|lower }}">
+                  <h5 class="card-title" style="color: gold;">{{ x.name_of_project }}</h5>
+                  <p class="card-text">Area: {{ x.area_of_project_located }}</p>
+                  <a href="/upcomingdetail/{{ x.upcoming_project_id }}" class="btn btn-primary">Know More</a>
+                </div>
+              </div>
+              
+              {% endfor %}
+          </div>
+        </div>
+    </section>
+
+
+
+
+    {% endblock %}
+  </body>
